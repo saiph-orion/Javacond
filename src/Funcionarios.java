@@ -14,6 +14,7 @@ public class Funcionarios {
     private String nome;
     private int idade;
     private int quantidadeDeVendas;
+    private String desempenho;
 
     /*Construtor é isso que tá aqui abaixo: Basicamente, depois de definir quais dados vão ser utilizados dentro do objeto "funcionario"
      * eu vou ter que dizer quais dados eu vou receber em cada atributo de Funcionário. Quando eu torno isso público, quer dizer que eu
@@ -39,6 +40,7 @@ public class Funcionarios {
          *                     eu construí pra validar o dado*/
         setIdade(idade);
         this.quantidadeDeVendas = quantidadeDeVendas;
+        this.setDesempenho();
     }
 
 
@@ -64,4 +66,25 @@ public class Funcionarios {
     public String getNome(){
         return this.nome;
     }
+    public void exibirDados (){
+        System.out.println("Crachá: " + this.numeroDoCracha);
+        System.out.println("Nome do Funcionário: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Quantidade de Vendas: " + this.quantidadeDeVendas);
+        System.out.println("Desempenho: " + this.desempenho);
+
+    }
+    public void setDesempenho(){
+        if(quantidadeDeVendas >= 50){
+            this.desempenho = "Excelente";}
+        else if (quantidadeDeVendas >= 40){
+            this.desempenho = "Ótimo";}
+        else if (quantidadeDeVendas >=30){
+            this.desempenho = "Bom";}
+        else if (quantidadeDeVendas >=20){
+            this.desempenho = "Regular";}
+        else if (quantidadeDeVendas < 20){
+            this.desempenho = "Fudido";}
+    };
+
 }
